@@ -1,0 +1,23 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block title %}Создание новой новости{% endblock %}
+
+{% block content %}
+
+<form action="" method="post" class="form-control">
+    {% csrf_token %}
+    <label for="id_title">Заголовка:</label>
+    <input class="form-control" type="text" name="title" maxlength="250" required="" id="id_title">
+    </p>
+    <p>
+        <label for="id_content">Контент:</label>
+        <textarea class="form-control"  name="content" cols="40" rows="10" required="" id="id_content"></textarea>
+    </p>
+    <p>
+        <label for="id_content_full">Полный контент:</label>
+        <textarea class="form-control"  name="content_full" cols="40" rows="10" required="" id="id_content_full"></textarea>
+    </p>
+    <input type="submit">
+</form>
+
+{% endblock %}

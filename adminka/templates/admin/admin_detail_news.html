@@ -1,0 +1,38 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block title %}Создание новой новости{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <!-- Заголовок новости -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 animated fadeIn">{{ data.title }}</h1>
+        </div>
+    </div>
+
+    <!-- Контент новости -->
+    <div class="row mt-4">
+        <div class="col-md-8 mx-auto">
+            <p class="lead animated fadeIn" data-aos="fade-up" data-aos-duration="1000">{{ data.content_full }}</p>
+        </div>
+    </div>
+
+    <!-- Дата создания новости -->
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <p class="text-muted animated fadeInUp" data-aos="fade-up" data-aos-duration="1500">Дата создания: {{ data.data_create|date:"d F Y" }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- Подключение для анимаций AOS (Animate On Scroll) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init(); // Инициализация анимаций
+</script>
+
+{% endblock %}
