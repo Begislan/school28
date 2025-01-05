@@ -1,0 +1,44 @@
+{% extends 'admin/news/../admin_base.html' %}
+
+{% block title %}Админка{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-5">Преподователи</h2>
+            </div>
+        </div>
+        <a class="btn btn-primary" href="{% url 'admin_create_teacher' %}">создать новый преподователь</a>
+        <br>
+        <br>
+        <!-- Прокручиваемая галерея/контент -->
+        <div class="row">
+            {% for all in teachers %}
+                <div class="col-md-4 mb-4">
+
+                    <div class="card shadow-lg rounded-3 bg-light" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="{{ all.img.url }}" class="card-img-top" alt="Изображение {{ all.name_firstname }}">
+                        <div class="p-4">
+                            <h5 class="card-title text-primary">
+                                <a href="{% url 'admin_detail_teacher' all.id %}">{{ all.name_firstname|truncatechars:50 }}</a>
+                            </h5>
+                            <p class="card-text text-muted">{{ all.spec|truncatechars:50 }} | {{ all.staj }} лет</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <!-- Подключение для анимаций AOS (Animate On Scroll) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init(); // Инициализация анимаций
+    </script>
+{% endblock %}
+
+

@@ -1,0 +1,16 @@
+{% extends 'admin/news/../admin_base.html' %}
+
+{% block title %}Создание новой преподователья{% endblock %}
+
+{% block content %}
+    <h3>Преподователь {{ teacher.name_firstname }}</h3>
+    <h6>{{ teacher.spec }} | {{ teacher.staj }} лет</h6>
+    <img width="400" src="{{ teacher.img.url }}" alt="{{ teacher.name_firstname }}">
+    <br>
+
+    <p>
+        <a href="{% url 'admin_teacher' %}">Назад</a> |
+        <a style="color: green" href="{% url 'admin_update_teacher' teacher.id %}">Изменить</a> |
+        <a style="color: red" href="{% url 'admin_delete_teacher' teacher.id %}">Удалить</a>
+    </p>
+{% endblock %}

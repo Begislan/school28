@@ -123,7 +123,7 @@
 
 <div class="header">
     <h1>Админка</h1>
-    <p class="admin-name">Добро пожаловать, Администратор</p>
+    <p class="admin-name">Добро пожаловать, {{ user.username }} | <a href="{% url 'logout' %}">Выход</a></p>
 </div>
 
 <!-- Контент -->
@@ -134,10 +134,10 @@
             <!-- Это будет скрываться на маленьких экранах -->
             <div class="sidebar d-none d-md-block">
                 <ul>
-                    <a href="{% url 'admin_core' %}"><li><i class="fas fa-tachometer-alt"></i> Ваши данные</li></a>
-                    <!-- <li><i class="fas fa-users"></i> Пользователи</li>
-                    <li><i class="fas fa-cogs"></i> Настройки</li>
-                    <li><i class="fas fa-sign-out-alt"></i> Выход</li> -->
+                    <a href="{% url 'admin_core' %}"><li><i class="fas fa-tachometer-alt"></i> Новости</li></a>
+                    <a href="{% url 'admin_teacher' %}"><li><i class="fas fa-users"></i> Преподователи</li></a>
+{#                    <li><i class="fas fa-cogs"></i> Настройки</li>#}
+{#                    <li><i class="fas fa-sign-out-alt"></i> Выход</li>#}
                 </ul>
             </div>
         </div>

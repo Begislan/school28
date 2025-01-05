@@ -1,0 +1,13 @@
+{% extends 'admin/news/../admin_base.html' %}
+
+{% block title %}Создание новой преподователья{% endblock %}
+
+{% block content %}
+    <h5>создание нового преподователья</h5>
+
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input type="submit">
+    </form>
+{% endblock %}

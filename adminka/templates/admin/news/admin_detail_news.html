@@ -1,0 +1,20 @@
+{% extends 'admin/news/../admin_base.html' %}
+
+{% block title %}Создание новой новости{% endblock %}
+
+{% block content %}
+    <br>
+    <a class="btn btn-warning" href="{% url 'admin_core' %}">Назад</a>
+    <a class="btn btn-primary" href="{% url 'admin_edit_news' post.id %}">изменить</a>
+    <a href="{% url 'admin_delete_news' post.id %}" class="btn btn-danger">Удалить</a>
+
+    <h5>тема поста: {{ post.title }}</h5>
+
+    <h5>полный текст: {{ post.content }}</h5>
+    <h5>дата создания: {{ post.created_at }}</h5>
+    {% for image in post.images.all %}
+        <img src="{{ image.image.url }}" alt="Изображение для {{ post.title }}" width="300"/>
+    {% empty %}
+        <h1>Нет изображение</h1>
+    {% endfor %}
+{% endblock %}

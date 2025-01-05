@@ -1,0 +1,2 @@
+from .news_views import (admin_core, admin_create_news, admin_detail_news, admin_edit_news, admin_delete_news)
+from .teacher_views import (admin_teacher, admin_create_teacher, admin_detail_teacher, admin_update_teacher, admin_delete_teacher)
