@@ -134,10 +134,15 @@
             <!-- Это будет скрываться на маленьких экранах -->
             <div class="sidebar d-none d-md-block">
                 <ul>
-                    <a href="{% url 'admin_core' %}"><li><i class="fas fa-tachometer-alt"></i> Новости</li></a>
-                    <a href="{% url 'admin_teacher' %}"><li><i class="fas fa-users"></i> Преподователи</li></a>
-{#                    <li><i class="fas fa-cogs"></i> Настройки</li>#}
-{#                    <li><i class="fas fa-sign-out-alt"></i> Выход</li>#}
+                    <a href="{% url 'admin_core' %}"><li>Новости</li></a>
+                    <a href="{% url 'admin_teacher' %}"><li>Преподователи</li></a>
+                    <a href="{% url 'admin_best_st_list' %}"><li>Успешные ученики</li></a>
+                    <a href="{% url 'admin_best_gr_list' %}"><li>Успешные выпускники</li></a>
+                    <a href="{% url 'admin_best_tc_old_list' %}"><li>Опытные преподаватели</li></a>
+                    <li>Олимпиада -</li>
+                    <li>Спротокиада -</li>
+                    <li>Учебние пособие -</li>
+                    <a href="{% url 'home' %}"><li class="text-warning">Сайт</li></a>
                 </ul>
             </div>
         </div>

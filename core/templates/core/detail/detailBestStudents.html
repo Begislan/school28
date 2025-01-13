@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% load static %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 style="text-shadow: black 0px 0px 20px"
+                class="display-2 text-white mb-4 animated slideInDown">{{ student.fio_st }}</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+            <div class="col-6">
+                <img  class="w-100" src="{{ student.img_st.url }}" alt="{{ student.fio_st }}">
+
+            </div>
+            <div class="col">
+                <h1>ФИО: {{ student.fio_st }}</h1>
+                <h5>Класс: {{ student.klass_st }}</h5>
+                <h5>Подробно: {{ student.content_st }}</h5>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Quote Start -->
+
+{% endblock %}

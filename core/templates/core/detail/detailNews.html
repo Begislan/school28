@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% load static %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 style="text-shadow: black 0px 0px 20px" class="display-2 text-white mb-4 animated slideInDown">{{ post.title }}</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <h1>{{ post.title}}</h1>
+
+                <h5>
+                    {{ post.content }}
+                </h5>
+
+                {% if post.images %}
+                    {% for image in images %}
+
+                        <img src="{{ image.image.url }}" alt="{{ post.title }}">
+                        
+                    {% endfor %}
+
+
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Quote Start -->
+
+{% endblock %}

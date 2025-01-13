@@ -1,0 +1,44 @@
+{% extends 'admin/news/../admin_base.html' %}
+
+{% block title %}Админка{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mb-5">Успешные ученики</h2>
+        </div>
+    </div>
+    <a class="btn btn-primary" href="{% url 'admin_best_st_create' %}">создать новый успешный ученик</a>
+    <br>
+    <br>
+    <!-- Прокручиваемая галерея/контент -->
+    <div class="row">
+        {% for st in students %}
+        <div class="col-md-4 mb-4">
+            <img class="card-img-top" src="{{ st.img_st.url }}" alt="изоб. {{ st.fio_st }}">
+            <div class="card shadow-lg rounded-3 bg-light p-4" data-aos="fade-up" data-aos-duration="1000">
+                
+                <h3 class="card-title text-primary">{{ st.fio_st|truncatechars:20 }}</h3>
+                <p class="card-text text-muted">{{ st.content_st|truncatechars:50 }}</p>
+                <div class="card-footer text-muted">
+                    <small><a href="{% url 'admin_best_st_update' st.id %}">изменить</a></small> |
+                    <small><a href="{% url 'admin_best_st_delete' st.id %}">Удалить</a></small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- Подключение для анимаций AOS (Animate On Scroll) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init(); // Инициализация анимаций
+</script>
+{% endblock %}
+
+

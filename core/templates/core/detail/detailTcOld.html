@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% load static %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 style="text-shadow: black 0px 0px 20px"
+                class="display-2 text-white mb-4 animated slideInDown">{{ tc.fio_old_tc }}</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+            <div class="col-6">
+                <img  class="w-100" src="{{ tc.img_old_tc.url }}" alt="{{ tc.fio_old_tc }}">
+
+            </div>
+            <div class="col">
+                <h1>ФИО: {{ tc.fio_old_tc }}</h1>
+                <h5>Специалнось: {{ tc.srec_old_tc }}</h5>
+                <h5>Годы работали: {{ tc.years_old_tc }}</h5>
+                <h5>Подробно: {{ tc.content_old_tc }}</h5>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Quote Start -->
+
+{% endblock %}

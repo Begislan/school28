@@ -1,0 +1,15 @@
+{% extends 'admin/news/../admin_base.html' %}
+
+{% block title %}Удаение вып.{% endblock %}
+
+{% block content %}
+
+    <h1>Удаление вып.</h1>
+    <p>Вы уверены, что хотите удалить вып. {{ gradient.fio_gr }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Удалить</button>
+    </form>
+    <a href="{% url 'admin_best_gr_list' %}">Назад</a>
+
+{% endblock %}

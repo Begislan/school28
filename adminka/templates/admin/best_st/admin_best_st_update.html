@@ -1,0 +1,14 @@
+{% extends 'admin/news/../admin_base.html' %}
+
+{% block title %}Создание новой преподователья{% endblock %}
+
+{% block content %}
+    <h5>изменение успешного ученика</h5>
+
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input class="text-success" type="submit" value="Изменить ">
+        
+    </form>
+{% endblock %}

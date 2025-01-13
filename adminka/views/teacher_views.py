@@ -7,7 +7,7 @@ from core.models import Teacher
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def admin_teacher(request):
-    teachers = Teacher.objects.all()
+    teachers = Teacher.objects.all().order_by('id')
     context = {
         'teachers': teachers,
     }

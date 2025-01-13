@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def admin_core(request):
-    all_data = News.objects.all()
+    all_data = News.objects.all().order_by('-id')
     return render(request, 'admin/news/admin_core.html', {
         'all_data': all_data
     })
